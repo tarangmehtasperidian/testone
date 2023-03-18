@@ -1,16 +1,7 @@
 pipeline {
   agent { dockerfile true }
   stages {
-    stage('Install dependencies') {
-      steps {
-        dir(path: 'serverless') {
-          sh 'chown -R 501:20 /.npm'
-          sh 'npm install @aws-cdk/aws-s3'
-        }
-
-      }
-    }
-
+    
     stage('Build dependencies') {
       steps {
         dir(path: 'serverless') {

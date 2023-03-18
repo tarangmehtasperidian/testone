@@ -4,7 +4,7 @@ pipeline {
     stage('Install dependencies') {
       steps {
         dir(path: 'serverless') {
-          sh 'sudo chown -R 501:20 /.npm'
+          sh 'chown -R 501:20 /.npm'
           sh 'npm install @aws-cdk/aws-s3'
         }
 
